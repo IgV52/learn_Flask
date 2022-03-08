@@ -1,0 +1,6 @@
+env/
+settings.py
+python.org.html
+__pycache__/
+config.py
+.vscode/
