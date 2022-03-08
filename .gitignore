@@ -4,3 +4,4 @@ python.org.html
 __pycache__/
 config.py
 .vscode/
+*.db
