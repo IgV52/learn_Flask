@@ -25,6 +25,7 @@ class User(db.Model, UserMixin):
 
     def check_password(self, password):
         self.password = check_password_hash(self.password,password)
+        return self.password
 
     @property
     def is_admin(self):
