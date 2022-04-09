@@ -56,5 +56,11 @@ def process_reg():
         
         flash('Вы успешно зарегистрировались')
         return redirect(url_for('user.login'))
-    flash('Ошибка, попробуйте еще раз.')
-    return redirect(url_for('user.register'))
+    else:
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash('Ошибка в поле "{}": - {}'.format(
+                    getattr(form, field).label.text,
+                    error
+                ))
+        return redirect(url_for('user.register'))
