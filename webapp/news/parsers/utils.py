@@ -18,7 +18,6 @@ def get_html(url):
 
 def save_news(title, url, pub):
     news_exists = News.query.filter(News.url == url).count()
-    print(news_exists)
     if not news_exists:
         new_news = News(title=title, url=url, pub=pub)
         db.session.add(new_news)

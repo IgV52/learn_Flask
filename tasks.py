@@ -5,7 +5,7 @@ from webapp import create_app
 from webapp.news.parsers import habr
 
 flask_app = create_app()
-celery_app = Celery('tasks', broker='redis://127.0.0.1:6379')
+celery_app = Celery('tasks', broker='redis://127.0.0.1:6379/0')
 
 @celery_app.task
 def habr_snippets():
